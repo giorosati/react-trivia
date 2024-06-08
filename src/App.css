@@ -14,14 +14,8 @@ h1 {
   font-style: oblique;
 }
 
-.gameArea {
-  background-color: gold;
-  color: white;
-  border-radius: 15px;
-  padding: 30px;
-  height: 400px;
-  width: 800px;
-  display: flex;
+.sidePanel {
+  padding: 20px;
 }
 .display {
   background-color: darkgrey;

@@ -73,7 +73,7 @@ function App() {
           question={selectedCard.question}
           answer={selectedCard.answer}
         />
-        <div>
+        <div className="sidePanel">
           <p className="score">score display</p>
           <p className="categoryPicker">category radio buttons</p>
           <NewButtonQuestion />
