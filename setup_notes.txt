@@ -1,0 +1,14 @@
+terminal commands:
+
+
+npm create vite@latest
+    name project
+    choose React framework
+    choose Typescript
+
+cd react-app
+npm install
+
+open in VS Code
+
+npm run dev
