@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import "./App.css";
 import Card from "./Card.js";
+import SidePanel from "./SidePanel.js";
 import NewButtonQuestion from "./NewQuestionButton.js";
 
 const category = [
@@ -57,13 +58,14 @@ function App() {
   const [correctCount, setCorrectCount] = useState(0);
 
   let currentCard = 1;
+  let score = [0, 0];
 
   const selectedCard = triviaCards[currentCard];
 
   return (
     <>
       <div className="title">
-        <h1>Star Trek Trivia</h1>
+        <h1>Star Trek™ Trivia</h1>
       </div>
 
       <div className="display">
@@ -74,8 +76,10 @@ function App() {
           answer={selectedCard.answer}
         />
         <div className="sidePanel">
-          <p className="score">score display</p>
-          <p className="categoryPicker">category radio buttons</p>
+          <SidePanel cardsTried={score[0]} correctAnswers={score[1]} />
+
+          {/* <p className="score">score display</p>
+          <p className="categoryPicker">category radio buttons</p> */}
           <NewButtonQuestion />
         </div>
       </div>
