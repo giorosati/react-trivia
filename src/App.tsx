@@ -170,11 +170,11 @@ function App() {
   // const [count, setCount] = useState(0);
   // const [correctCount, setCorrectCount] = useState(0);
   const [answerState, setAnswerState] = useState(0);
+  const [cardId, setCardId] = useState(0);
 
-  let currentCard = 0;
-  let score = [9, 7];
+  // let score = [9, 7];
 
-  const selectedCard = triviaCards[currentCard];
+  const selectedCard = triviaCards[cardId];
 
   return (
     <>
@@ -202,7 +202,8 @@ function App() {
         </div>
       </div>
       <div className="navigation">
-        <PrevButton /> <NextButton />
+        <PrevButton />
+        <NextButton cardId={cardId} />
       </div>
     </>
   );
