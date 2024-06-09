@@ -169,12 +169,15 @@ const triviaCards = [
 function App() {
   // const [count, setCount] = useState(0);
   // const [correctCount, setCorrectCount] = useState(0);
+  const totalCards = 20;
   const [answerState, setAnswerState] = useState(0);
   const [cardId, setCardId] = useState(0);
-
   // let score = [9, 7];
 
   const selectedCard = triviaCards[cardId];
+  const resetAnswerState = () => {
+    setAnswerState(0);
+  };
 
   return (
     <>
@@ -203,7 +206,12 @@ function App() {
       </div>
       <div className="navigation">
         <PrevButton />
-        <NextButton cardId={cardId} />
+        <NextButton
+          cardId={cardId}
+          setCardId={setCardId}
+          totalCards={totalCards}
+          resetAnswerState={resetAnswerState}
+        />
       </div>
     </>
   );
