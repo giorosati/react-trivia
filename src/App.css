@@ -23,10 +23,32 @@ h1 {
   background-color: darkgrey;
   color: white;
   border-radius: 15px;
-  padding: 30px;
-  height: 90%;
-  width: 90%;
+  padding: 20px;
+  height: auto;
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Styles for Tablets */
+@media (min-width: 600px) {
+  .display {
+    padding: 25px; /* Increase padding for tablets */
+    height: 80%; /* Adjust height for tablets */
+    width: 95%; /* Adjust width for tablets */
+    flex-direction: row; /* Stack content horizontally on tablets */
+  }
+}
+
+/* Styles for Desktops */
+@media (min-width: 1024px) {
+  .display {
+    padding: 30px; /* Original padding for desktop */
+    height: 90%; /* Original height for desktop */
+    width: 90%; /* Original width for desktop */
+    flex-direction: row; /* Keep content horizontal */
+  }
 }
 
 .question {
