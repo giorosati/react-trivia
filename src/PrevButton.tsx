@@ -1,3 +1,3 @@
 export default function PrevButtton() {
-  return <button className="button">Previous</button>;
+  return <button className="button navigation">Previous</button>;
 }

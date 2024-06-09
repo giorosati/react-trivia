@@ -42,29 +42,136 @@ const triviaCards = [
     cardId: 1,
     series: "TOS",
     question: "What city and state was Captain James T. Kirk born in?",
-    answer: "Riverseriese, Iowa",
+    answer: "Riverside, Iowa",
   },
   {
     cardId: 2,
     series: "TOS",
     question: "Who was the communications officer serving with Captain Kirk?",
-    answer: "Lt. Ohura",
+    answer: "Lieutenant Uhura",
   },
   {
     cardId: 3,
     series: "TOS",
     question:
       "What is the designation of the Enterprise in the Original Series?",
-    answer: "Lt. Ohura",
+    answer: "USS Enterprise (NCC-1701)",
+  },
+  {
+    cardId: 4,
+    series: "TOS",
+    question: "What was the name of Captain Kirk's brother?",
+    answer: "George Samuel Kirk",
+  },
+  {
+    cardId: 5,
+    series: "TOS",
+    question: "Who was the chief medical officer aboard the Enterprise?",
+    answer: "Dr. Leonard McCoy",
+  },
+  {
+    cardId: 6,
+    series: "TOS",
+    question:
+      "What Vulcan served as science officer and first officer under Captain Kirk?",
+    answer: "Spock",
+  },
+  {
+    cardId: 7,
+    series: "TOS",
+    question: "What is the name of the Klingon homeworld?",
+    answer: "Qo'noS",
+  },
+  {
+    cardId: 8,
+    series: "TOS",
+    question: "Who was the helmsman often seen piloting the Enterprise?",
+    answer: "Hikaru Sulu",
+  },
+  {
+    cardId: 9,
+    series: "TOS",
+    question: "What is the name of the Chief Engineer of the Enterprise?",
+    answer: "Montgomery Scott",
+  },
+  {
+    cardId: 10,
+    series: "TOS",
+    question: "What is the nickname Dr. McCoy often uses for Spock?",
+    answer: "Pointy-Eared",
+  },
+  {
+    cardId: 11,
+    series: "TOS",
+    question: "Which ship did Captain Kirk serve on before the Enterprise?",
+    answer: "USS Farragut",
+  },
+  {
+    cardId: 12,
+    series: "TOS",
+    question:
+      "What was the name of the first Romulan ship encountered by the Enterprise?",
+    answer: "The Bird-of-Prey",
+  },
+  {
+    cardId: 13,
+    series: "TOS",
+    question: "What was the name of Spock's father?",
+    answer: "Sarek",
+  },
+  {
+    cardId: 14,
+    series: "TOS",
+    question:
+      "What famous battle did Captain Kirk participate in at Starfleet Academy?",
+    answer: "The Kobayashi Maru scenario",
+  },
+  {
+    cardId: 15,
+    series: "TOS",
+    question:
+      "What is the title of the first episode of Star Trek: The Original Series to air on television?",
+    answer: "The Man Trap",
+  },
+  {
+    cardId: 16,
+    series: "TOS",
+    question: "What device does Dr. McCoy often use for medical scans?",
+    answer: "The tricorder",
+  },
+  {
+    cardId: 17,
+    series: "TOS",
+    question: "What species is known for saying 'Resistance is futile'?",
+    answer: "The Borg",
+  },
+  {
+    cardId: 18,
+    series: "TOS",
+    question: "What is the name of the bartender at Ten Forward?",
+    answer: "Guinan",
+  },
+  {
+    cardId: 19,
+    series: "TOS",
+    question:
+      "Who was Captain Kirk's best friend from his time at Starfleet Academy?",
+    answer: "Gary Mitchell",
+  },
+  {
+    cardId: 20,
+    series: "TOS",
+    question: "What is the name of Spock's human mother?",
+    answer: "Amanda Grayson",
   },
 ];
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [correctCount, setCorrectCount] = useState(0);
+  // const [count, setCount] = useState(0);
+  // const [correctCount, setCorrectCount] = useState(0);
   const [answerState, setAnswerState] = useState(0);
 
-  let currentCard = 1;
+  let currentCard = 0;
   let score = [9, 7];
 
   const selectedCard = triviaCards[currentCard];
@@ -81,6 +188,7 @@ function App() {
           category={selectedCard.series}
           question={selectedCard.question}
           answer={selectedCard.answer}
+          answerState={answerState}
         />
         <div className="sidePanel">
           {/* <SidePanel cardsTried={score[0]} correctAnswers={score[1]} /> */}
@@ -91,28 +199,13 @@ function App() {
             answerState={answerState}
             setAnswerState={setAnswerState}
           />
-
-          <div>
-            <PrevButton /> <NextButton />
-          </div>
         </div>
+      </div>
+      <div className="navigation">
+        <PrevButton /> <NextButton />
       </div>
     </>
   );
 }
 
 export default App;
-
-// old mapping of cards:
-{
-  /* {triviaCards.map((triviaCard) => {
-            return (
-              <Card
-                key={triviaCard.cardId}
-                category={triviaCard.category}
-                question={triviaCard.question}
-                answer={triviaCard.answer}
-              />
-            );
-          })} */
-}
