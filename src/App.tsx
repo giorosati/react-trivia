@@ -3,7 +3,9 @@ import { useState } from "react";
 import "./App.css";
 import Card from "./Card.js";
 import SidePanel from "./SidePanel.js";
-import NewButtonQuestion from "./NewQuestionButton.js";
+import PrevButton from "./PrevButton.js";
+import NextButton from "./NextButton.js";
+import ShowHideAnswer from "./ShowHideAnswer.js";
 
 const category = [
   {
@@ -48,17 +50,22 @@ const triviaCards = [
     question: "Who was the communications officer serving with Captain Kirk?",
     answer: "Lt. Ohura",
   },
+  {
+    cardId: 3,
+    series: "TOS",
+    question:
+      "What is the designation of the Enterprise in the Original Series?",
+    answer: "Lt. Ohura",
+  },
 ];
-
-// array to keep track of cards that have been played in current session
-const playedCards = [];
 
 function App() {
   const [count, setCount] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
+  const [answerState, setAnswerState] = useState(0);
 
   let currentCard = 1;
-  let score = [0, 0];
+  let score = [9, 7];
 
   const selectedCard = triviaCards[currentCard];
 
@@ -76,11 +83,18 @@ function App() {
           answer={selectedCard.answer}
         />
         <div className="sidePanel">
-          <SidePanel cardsTried={score[0]} correctAnswers={score[1]} />
-
+          {/* <SidePanel cardsTried={score[0]} correctAnswers={score[1]} /> */}
           {/* <p className="score">score display</p>
           <p className="categoryPicker">category radio buttons</p> */}
-          <NewButtonQuestion />
+
+          <ShowHideAnswer
+            answerState={answerState}
+            setAnswerState={setAnswerState}
+          />
+
+          <div>
+            <PrevButton /> <NextButton />
+          </div>
         </div>
       </div>
     </>
