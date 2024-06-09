@@ -40,127 +40,127 @@ const category = [
 const triviaCards = [
   {
     cardId: 1,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "What city and state was Captain James T. Kirk born in?",
     answer: "Riverside, Iowa",
   },
   {
     cardId: 2,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "Who was the communications officer serving with Captain Kirk?",
     answer: "Lieutenant Uhura",
   },
   {
     cardId: 3,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question:
       "What is the designation of the Enterprise in the Original Series?",
     answer: "USS Enterprise (NCC-1701)",
   },
   {
     cardId: 4,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "What was the name of Captain Kirk's brother?",
     answer: "George Samuel Kirk",
   },
   {
     cardId: 5,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "Who was the chief medical officer aboard the Enterprise?",
     answer: "Dr. Leonard McCoy",
   },
   {
     cardId: 6,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question:
       "What Vulcan served as science officer and first officer under Captain Kirk?",
     answer: "Spock",
   },
   {
     cardId: 7,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "What is the name of the Klingon homeworld?",
     answer: "Qo'noS",
   },
   {
     cardId: 8,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "Who was the helmsman often seen piloting the Enterprise?",
     answer: "Hikaru Sulu",
   },
   {
     cardId: 9,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "What is the name of the Chief Engineer of the Enterprise?",
     answer: "Montgomery Scott",
   },
   {
     cardId: 10,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "What is the nickname Dr. McCoy often uses for Spock?",
     answer: "Pointy-Eared",
   },
   {
     cardId: 11,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "Which ship did Captain Kirk serve on before the Enterprise?",
     answer: "USS Farragut",
   },
   {
     cardId: 12,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question:
       "What was the name of the first Romulan ship encountered by the Enterprise?",
     answer: "The Bird-of-Prey",
   },
   {
     cardId: 13,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "What was the name of Spock's father?",
     answer: "Sarek",
   },
   {
     cardId: 14,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question:
       "What famous battle did Captain Kirk participate in at Starfleet Academy?",
     answer: "The Kobayashi Maru scenario",
   },
   {
     cardId: 15,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question:
       "What is the title of the first episode of Star Trek: The Original Series to air on television?",
     answer: "The Man Trap",
   },
   {
     cardId: 16,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "What device does Dr. McCoy often use for medical scans?",
     answer: "The tricorder",
   },
   {
     cardId: 17,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "What species is known for saying 'Resistance is futile'?",
     answer: "The Borg",
   },
   {
     cardId: 18,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "What is the name of the bartender at Ten Forward?",
     answer: "Guinan",
   },
   {
     cardId: 19,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question:
       "Who was Captain Kirk's best friend from his time at Starfleet Academy?",
     answer: "Gary Mitchell",
   },
   {
     cardId: 20,
-    series: "TOS",
+    series: "Star Trek: The Original Series",
     question: "What is the name of Spock's human mother?",
     answer: "Amanda Grayson",
   },
@@ -194,24 +194,23 @@ function App() {
           answerState={answerState}
         />
         <div className="sidePanel">
-          {/* <SidePanel cardsTried={score[0]} correctAnswers={score[1]} /> */}
-          {/* <p className="score">score display</p>
-          <p className="categoryPicker">category radio buttons</p> */}
-
           <ShowHideAnswer
             answerState={answerState}
             setAnswerState={setAnswerState}
           />
+          <PrevButton
+            cardId={cardId}
+            setCardId={setCardId}
+            totalCards={totalCards}
+            resetAnswerState={resetAnswerState}
+          />
+          <NextButton
+            cardId={cardId}
+            setCardId={setCardId}
+            totalCards={totalCards}
+            resetAnswerState={resetAnswerState}
+          />
         </div>
-      </div>
-      <div className="navigation">
-        <PrevButton />
-        <NextButton
-          cardId={cardId}
-          setCardId={setCardId}
-          totalCards={totalCards}
-          resetAnswerState={resetAnswerState}
-        />
       </div>
     </>
   );
