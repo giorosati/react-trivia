@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import "./App.css";
-import Card from "./Card.js";
-import SidePanel from "./SidePanel.js";
-import PrevButton from "./PrevButton.js";
-import NextButton from "./NextButton.js";
-import ShowHideAnswer from "./ShowHideAnswer.js";
+import Card from "./Card.jsx";
+import SidePanel from "./SidePanel.jsx";
+import PrevButton from "./PrevButton.jsx";
+import NextButton from "./NextButton.jsx";
+import ShowHideAnswer from "./ShowHideAnswer.jsx";
 
 const category = [
   {

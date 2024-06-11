@@ -28,7 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-image: url("../public/heic0206a.jpg");
+  background-image: url("./heic0206a.jpg");
 }
 
 h1 {
